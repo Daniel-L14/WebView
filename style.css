@@ -1,0 +1,25 @@
+:root{ --size: 280px; --radius: 22px; }
+*{box-sizing:border-box}
+body{font-family:Inter, Arial, sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;background:#f3efe9;}
+.container{text-align:center;padding:24px;}
+h1{margin:0 0 12px 0;font-size:24px;color:#243b4a;}
+
+.slush{width:var(--size);height:var(--size);border-radius:var(--radius);margin:14px auto;position:relative;box-shadow:0 10px 24px rgba(0,0,0,0.12);overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.face{position:absolute;top:52%;transform:translateY(-10%);display:flex;flex-direction:column;align-items:center;}
+.eye{width:28px;height:28px;border-radius:50%;background:#000;margin:6px;}
+.mouth{width:70px;height:30px;border-radius:30px;background:#1b1b1b;margin-top:6px;}
+
+/* flavors */
+.flavor-red{background:linear-gradient(180deg,#ff7b7b,#e94d57);}
+.flavor-blue{background:linear-gradient(180deg,#7ecbff,#2f95d4);}
+.flavor-green{background:linear-gradient(180deg,#a9ffb7,#4ec94d);}
+
+/* sparkle */
+.ice::after{content:"";position:absolute;left:12%;top:12%;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.9);filter:blur(0.6px);animation:float 1.8s infinite ease-in-out;}
+@keyframes float{0%{transform:translateY(0);}50%{transform:translateY(-8px);}100%{transform:translateY(0);}}
+
+.controls{display:flex;gap:8px;justify-content:center;margin-top:14px;}
+button{padding:8px 12px;border-radius:8px;border:0;background:#2b2b2b;color:white;cursor:pointer;user-select:none}
+button[data-flavor]{background:#444}
+#orderBtn{background:#ff8a00}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:24px;padding:12px 20px;background:#222;color:#fff;border-radius:8px;opacity:0;transition:opacity .3s}
